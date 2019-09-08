@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional fonts for this theme -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this theme -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1280px){
+        .intro-header video {
+            display: none;
+        }
+    }
+ .intro-header video {
+        -moz-transform: translateX(50%) translateY(50%);
+        -webkit-transform: translateX(50%) translateY(50%);
+        -ms-transform: translateX(50%) translateY(50%);
+        transform: translateX(50%) translateY(50%);
+        bottom: 50%;
+        height: auto;
+        min-height: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        position: absolute;
+        right: 50%;
+        width: auto;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="index.html">Start Bootstrap</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="post.html">Sample Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg');overflow: hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+            <video autoplay loop muted playsinline src="img/banner.mp4"></video>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div id="post-list" class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="post-preview" v-for="(item,index) in list">
+                    <a :href="item.url" class="article-title">
+                        <h2 class="post-title">
+                            {{ item.title }}
+                        </h2>
+                    </a>
+                    <blockquote class="op">
+                        {{ item.content }}
+                    </blockquote>
+
+                    <p class="post-meta">于<a :href="item.url">{{item.create_time }}</a>发表</p>
+                </div>
+                <hr>
+               
+                
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2017. More Templates <a href="http://www.zixuephp.cn/" target="_blank" title="模板在线">模板在线</a> <a href="http://www.zixuephp.cn" target="_blank">厚朴网络</a> - Collect from <a href="http://www.zixuephp.cn/" title="模板在线" target="_blank">模板在线</a> <a href="http://www.zixuephp.cn" target="_blank">厚朴网络</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- jQuery Version 3.1.1 -->
+     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Tether -->
+    <script src="lib/tether/tether.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+<script>
+        var vm = new Vue({
+            el: "#app",
+            data:{
+                test:"vue-test",
+                list:[]
+            },
+            methods:{
+                onInit(){
+                    axios("http://www.liuhai.fun./api/indexlist").then(res => {
+                        this.list = res.data.data;
+                        console.log(this.list)
+                    });
+                }
+            },
+            created(){
+                this.onInit();
+            }
+        })
+</script>
+</body>
+
+</html>
